@@ -2,10 +2,10 @@
 
 ## Table of Contents
 
-- [SPARKIFY ETL (Amazon Redshift)](#sparkify-etl-amazon-redshift)
+- [Sparkify-ETL-Using-Cloud-Technology (Amazon Redshift)](#sparkify-etl-amazon-redshift)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
-  - [Project Description] 
+  - [Project Description](#project-description)
   - [Datasets](#tools)
   - [Project Requirements](#usage)
   - [Usage](#usage)
