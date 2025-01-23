@@ -5,7 +5,7 @@
 - [Sparkify-ETL-Using-Cloud-Technology(Amazon Redshift)](#sparkify-etl-amazon-redshift)
   - [Introduction](#introduction)
   - [Project Description](#project-description)
-  - [Project Requirements](#usage)
+  - [Schema for Song Play Analysis](#usage)
   - [Datasets](#tools)
   - [Project Files](#project-files)
   - [Usage](#usage)
@@ -17,9 +17,9 @@ A music streaming startup, **Sparkify**, has grown their user base and song data
 The project is to build an ETL pipeline that extracts their data from **S3**, stages them in **Redshift**, and transforms data into a set of dimensional tables for their analytics team to continue finding insights into what songs their users are listening to.
 
 ## Project Description
-As a Data Engineer working for Sparkify, I am required to build an ETL (Extract, Transform and Load) pipeline that extracts data from an S3 location which has been provided, stages the collected data into Redshift, and transforms the data into a set of dimensional tables for their analytics team. This will further help the team to continue finding insights into what songs their users are listening to. To complete the project, knowledge of certain technology and tools is required: Python, AWS Redshift, AWS s3 and SQL. 
+As a Data Engineer working for Sparkify, I am required to build an ETL (Extract, Transform and Load) pipeline that extracts data from an S3 location which has been provided, stages the collected data into Redshift, and transforms the data into a set of dimensional tables for their analytics team. This will further help the team to continue finding insights into what songs their users are listening to. To complete the project, knowledge of certain technologies and tools is required: **Python**, **AWS Redshift**, **AWS s3** and **SQL**. 
 
-## Project requirements
+## Schema for Song Play Analysis
 
 Using the song and event datasets, create a star schema optimized for queries on song play analysis including the following tables.
 
