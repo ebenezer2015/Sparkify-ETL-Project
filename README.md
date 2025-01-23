@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [Sparkify-ETL-Using-Cloud-Technology (Amazon Redshift)](#sparkify-etl-amazon-redshift)
+- [Sparkify-ETL-Using-Cloud-Technology(Amazon Redshift)](#sparkify-etl-amazon-redshift)
   - [Introduction](#introduction)
   - [Project Description](#project-description)
   - [Project Requirements](#usage)
@@ -17,7 +17,7 @@ A music streaming startup, **Sparkify**, has grown their user base and song data
 The project is to build an ETL pipeline that extracts their data from **S3**, stages them in **Redshift**, and transforms data into a set of dimensional tables for their analytics team to continue finding insights into what songs their users are listening to.
 
 ## Project Description
-As a Data Engineer working for Sparkify, I am required to build an ETL (Extract, Transform and Load) pipeline that extracts data from an S3 location whihc has been provided, stages the collected data into Redshift, and transforms the data into a set of dimensional tables for their analytics team. this will further help the team to continue finding insights into what songs their users are listening to. To complete the project, knowledge of certain technology and tools are required and these are python, AWS Redshift, AWS s3 and SQL. 
+As a Data Engineer working for Sparkify, I am required to build an ETL (Extract, Transform and Load) pipeline that extracts data from an S3 location which has been provided, stages the collected data into Redshift, and transforms the data into a set of dimensional tables for their analytics team. This will further help the team to continue finding insights into what songs their users are listening to. To complete the project, knowledge of certain technology and tools is required: Python, AWS Redshift, AWS s3 and SQL. 
 
 ## Project requirements
 
@@ -25,25 +25,43 @@ Using the song and event datasets, create a star schema optimized for queries on
 
 #### Fact Table
 1. **songplays**: hold records in event data associated with song plays i.e. records with page `NextSong`
-     * *songplay_id
-     * *start_time
-     * *user_id
-     * *level
-     * *song_id
-     * *artist_id
-     * *session_id
-     * *location
-     * *user_agent
+     * songplay_id
+     * start_time
+     * user_id
+     * level
+     * song_id
+     * artist_id
+     * session_id
+     * location
+     * user_agent
      
 #### Dimension Tables
 1. **users**: users in the app
-     * *user_id, first_name, last_name, gender, level*
+     * user_id
+     * first_name
+     * last_name
+     * gender
+     * level
 2. **songs**: songs in music database
-    * *song_id, title, artist_id, year, duration*
+    * song_id
+    * title
+    * artist_id
+    * year
+    * duration
 3. **artists**: artists in music database
-    * *artist_id, name, location, lattitude, longitude*
+    * artist_id
+    * name
+    * location
+    * lattitude
+    * longitude
 4. **time**: timestamps of records in songplays broken down into specific units
-    * *start_time, hour, day, week, month, year, weekday*
+    * start_time
+    * hour
+    * day
+    * week
+    * month
+    * year
+    * weekday
 
 ## Datasets
 
