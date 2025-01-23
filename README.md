@@ -3,13 +3,12 @@
 ## Table of Contents
 
 - [Sparkify-ETL-Using-Cloud-Technology (Amazon Redshift)](#sparkify-etl-amazon-redshift)
-  - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Project Description](#project-description)
-  - [Datasets](#tools)
   - [Project Requirements](#usage)
-  - [Usage](#usage)
+  - [Datasets](#tools)
   - [Project Files](#project-files)
+  - [Usage](#usage)
 
 ## Introduction
 
@@ -20,6 +19,31 @@ The project is to build an ETL pipeline that extracts their data from **S3**, st
 ## Project Description
 As a Data Engineer working for Sparkify, I am required to build an ETL (Extract, Transform and Load) pipeline that extracts data from an S3 location whihc has been provided, stages the collected data into Redshift, and transforms the data into a set of dimensional tables for their analytics team. this will further help the team to continue finding insights into what songs their users are listening to. To complete the project, knowledge of certain technology and tools are required and these are python, AWS Redshift, AWS s3 and SQL. 
 
+## Project requirements
+
+Using the song and event datasets, create a star schema optimized for queries on song play analysis including the following tables.
+
+#### Fact Table
+1. **songplays**: hold records in event data associated with song plays i.e. records with page `NextSong`
+     * *songplay_id
+     * *start_time
+     * *user_id
+     * *level
+     * *song_id
+     * *artist_id
+     * *session_id
+     * *location
+     * *user_agent
+     
+#### Dimension Tables
+1. **users**: users in the app
+     * *user_id, first_name, last_name, gender, level*
+2. **songs**: songs in music database
+    * *song_id, title, artist_id, year, duration*
+3. **artists**: artists in music database
+    * *artist_id, name, location, lattitude, longitude*
+4. **time**: timestamps of records in songplays broken down into specific units
+    * *start_time, hour, day, week, month, year, weekday*
 
 ## Datasets
 
@@ -46,37 +70,6 @@ log_data/2018/11/2018-11-13-events.json
 
 *  **Log Json Meta Information**: Contains the meta information that is required by AWS to correctly load the Log Dataset
 
-
-## Project requirements
-
-Using the song and event datasets, create a star schema optimized for queries on song play analysis including the following tables.
-
-#### Fact Table
-1. **songplays**: records in event data associated with song plays i.e. records with page `NextSong`
-     * *songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent*
-     
-#### Dimension Tables
-1. **users**: users in the app
-     * *user_id, first_name, last_name, gender, level*
-2. **songs**: songs in music database
-    * *song_id, title, artist_id, year, duration*
-3. **artists**: artists in music database
-    * *artist_id, name, location, lattitude, longitude*
-4. **time**: timestamps of records in songplays broken down into specific units
-    * *start_time, hour, day, week, month, year, weekday*
-
-
-## Usage
-
-* First, you have to create the redshift cluster and the IAM Role to stage the data in it by following the `Cluster_Create_Delete.ipynb` instructions
-  
-* Second, to run the ETL we have to create the database and the tables so we have to execute `create_tables.py` file.
-* `Create_tables.py` creates 2 tables for staging the log and song files from _**S3**_ into _**AWS Redshift**_ and 4 dimensions and a fact table for the star schema data warehouse
-
-* Now we can run `etl.py` to transfer our data from songs and log files into the staging database tables then transfer the data from staging tables to the data warehouse dimensions and fact.
-
-**_Important_**: _update the database and account credentials in the files to your own credentials in `dwh.cfg`
-
 ## Project Files
 
 * `Cluster_Create_Delete.ipynb`
@@ -101,6 +94,19 @@ Using the song and event datasets, create a star schema optimized for queries on
 
 * `sql_queries.py`
   * This file contains the queries executed to create and drop the tables, transfering the data into the 2 staging tables then the queries to transfer the data into the data warehouse.
+
+## Usage
+
+* First, you have to create the redshift cluster and the IAM Role to stage the data in it by following the `Cluster_Create_Delete.ipynb` instructions
+  
+* Second, to run the ETL we have to create the database and the tables so we have to execute `create_tables.py` file.
+* `Create_tables.py` creates 2 tables for staging the log and song files from _**S3**_ into _**AWS Redshift**_ and 4 dimensions and a fact table for the star schema data warehouse
+
+* Now we can run `etl.py` to transfer our data from songs and log files into the staging database tables then transfer the data from staging tables to the data warehouse dimensions and fact.
+
+**_Important_**: _update the database and account credentials in the files to your own credentials in `dwh.cfg`
+
+
 
 
 
