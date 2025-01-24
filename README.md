@@ -90,11 +90,6 @@ log_data/2018/11/2018-11-13-events.json
 
 ## Project Files
 
-* `Cluster_Create_Delete.ipynb`
-  * This Jupyter notebook is used to create the cluster and delete it after completing
-  * It is a series of instructions to create the cluster and the roles associated with it
-  * The file gets its credentials from `dwh.cfg` so you have to fill in the required credentials first
-
 * `dwh.cfg`
   * Create your IAM User with Admin Access and put your credentials in this file
   * Put your cluster credentials and the number of nodes you want to create in `Cluster_Create_Delete.ipynb` in this file
