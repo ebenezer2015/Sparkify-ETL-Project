@@ -47,7 +47,7 @@ def insert_tables(cur, conn):
 
 def main():
     """
-    This function is used to connection with sparkify database and gets cursor to it, 
+    This function is used to connect with sparkify database and gets cursor to it, 
     load the stage tables and load the fact and dimension tables.
     """
     # Get the connection information
