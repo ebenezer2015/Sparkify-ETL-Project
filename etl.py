@@ -2,8 +2,6 @@
 This script is used to load data from S3 into staging tables on Redshift 
 and then process that data into your analytics tables on Redshift.
 
-author: Philippe Jean Mith
-date: Sept 9th 2023
 """
 
 import configparser
@@ -13,7 +11,7 @@ from sql_queries import copy_table_queries, insert_table_queries
 
 def load_staging_tables(cur, conn):
     """
-    fonction to load the stage tables
+    function to load the stage tables
 
     Input
     -----

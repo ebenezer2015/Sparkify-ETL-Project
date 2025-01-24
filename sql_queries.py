@@ -1,6 +1,5 @@
 import configparser
 
-
 # CONFIG
 config = configparser.ConfigParser()
 config.read('dwh.cfg')
@@ -143,7 +142,8 @@ INSERT INTO fact_songplays(
     location ,
     user_agent 
 )
-SELECT DISTINCT se.ts,
+SELECT 
+    DISTINCT se.ts,
     se.userId , 
     se.level,
     ss.song_id,
@@ -165,7 +165,9 @@ INSERT INTO dim_users(
     last_name,
     gender,
     level
-)SELECT DISTINCT userId,
+)
+SELECT 
+    DISTINCT userId,
     firstname,
     lastname,
     gender,
@@ -184,7 +186,8 @@ INSERT INTO dim_songs(
     artist_id,
     year,
     duration
-)SELECT
+)
+SELECT
     DISTINCT song_id,
     title,
     artist_id,
@@ -221,7 +224,8 @@ INSERT INTO dim_time(
     month ,
     year ,
     weekday 
-)SELECT
+)
+SELECT
     DISTINCT ts as start_time, 
     EXTRACT (hr from ts) as hour, 
     EXTRACT (d from ts) as day, 
