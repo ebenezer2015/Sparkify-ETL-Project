@@ -115,14 +115,14 @@ log_data/2018/11/2018-11-13-events.json
 
 ## Usage
 
-* First, you have to create the redshift cluster and the IAM Role to stage the data in it by following the `Cluster_Create_Delete.ipynb` instructions
+* First, you have to create the redshift cluster and the IAM Role to stage the data in it.
   
 * Second, to run the ETL we have to create the database and the tables so we have to execute `create_tables.py` file.
 * `Create_tables.py` creates 2 tables for staging the log and song files from _**S3**_ into _**AWS Redshift**_ and 4 dimensions and a fact table for the star schema data warehouse
 
 * Now we can run `etl.py` to transfer our data from songs and log files into the staging database tables then transfer the data from staging tables to the data warehouse dimensions and fact.
 
-**_Important_**: _update the database and account credentials in the files to your own credentials in `dwh.cfg`
+**Important information**: Please update the database and account credentials in the files to your own credentials in `dwh.cfg`
 
 
 
